@@ -1,0 +1,445 @@
+* {
+    /* Define margem, preenchimento e modelo de caixa para todos os elementos */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;}
+
+
+/* Estilos gerais */
+body {
+    margin: 0; /* Remove a margem padrão do corpo */
+    font-family: Arial, sans-serif; /* Define a família de fontes para todo o documento como Arial, com fallback para fontes sans-serif */
+    background-image: url(fundo23.png); /* Define a imagem de fundo */
+    background-size: cover; /* Faz com que a imagem cubra toda a área do elemento */
+    
+}
+
+/* Estilos do cabeçalho */
+.header-content {
+    background-color: rgba(51, 51, 51, 0.7); /* Cor de fundo do cabeçalho com transparência */
+    color: white; /* Cor do texto do cabeçalho */
+    padding: 10px 0; /* Espaçamento interno (topo e base) do cabeçalho */
+    display: flex; /* Usa flexbox para organização dos itens */
+    justify-content: center; /* Centraliza horizontalmente os itens dentro do cabeçalho */
+    align-items: center; /* Centraliza verticalmente os itens dentro do cabeçalho */
+    position: relative; /* Define posição relativa para posicionamento dos elementos filhos */
+}
+
+/* Estilos da logo e texto */
+.nav-icon-container {
+    background-color: #fdf9f9; /* Cor de fundo do contêiner da logo */
+    padding: 20px; /* Espaçamento interno */
+    border-radius: 50%; /* Bordas arredondadas para criar um círculo */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transições suaves para transformação e sombra */
+    margin-right: 30px; /* Margem à direita para espaçamento */
+    display: flex; /* Usa flexbox para alinhamento */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    position: relative; /* Define posição relativa para posicionamento */
+}
+
+.logo-text {
+    position: absolute; /* Posição absoluta para texto ficar sobreposta à logo */
+    top: calc(100% + 10px); /* Posiciona o texto abaixo da logo */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translateX(-50%); /* Centraliza horizontalmente */
+    color: white; /* Cor do texto */
+    font-size: 12px; /* Tamanho da fonte */
+    text-align: center; /* Alinhamento do texto */
+}
+
+.nav-icon-container img {
+    width: 80px; /* Tamanho maior da logo */
+    height: auto; /* Altura automática para manter proporções */
+    transition: transform 0.3s ease; /* Transição suave para transformações */
+}
+
+.nav-icon-container:hover {
+    transform: scale(1.1); /* Efeito de escala ao passar o mouse */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Sombra ao passar o mouse */
+}
+
+/* Estilos da navegação */
+.nav-content {
+    display: flex; /* Usa flexbox para layout flexível */
+    justify-content: space-between; /* Espaçamento uniforme entre os itens */
+    align-items: center; /* Centraliza verticalmente os itens */
+    width: 100%; /* Largura total */
+    max-width: 1200px; /* Largura máxima do conteúdo */
+    margin: 0 auto; /* Centraliza o conteúdo na página */
+    padding: 0 20px; /* Adiciona espaçamento nas bordas */
+}
+
+/* Estilos do menu de navegação */
+.nav-menu {
+    display: flex; /* Usa flexbox para layout flexível */
+    list-style-type: none; /* Remove estilos padrão de lista */
+    padding: 0; /* Remove o preenchimento padrão da lista */
+    margin: 0; /* Remove a margem padrão */
+    align-items: center; /* Centraliza verticalmente os itens */
+}
+
+/* Estilos dos links de navegação */
+.nav-link {
+    display: flex; /* Usa flexbox para layout flexível */
+    align-items: center; /* Centraliza verticalmente os itens */
+    margin: 0 10px; /* Espaçamento horizontal entre os itens */
+    text-align: center; /* Alinhamento do texto */
+    transition: transform 0.3s; /* Transição suave para transformações */
+}
+
+.nav-link:hover {
+    transform: scale(1.2); /* Aumenta o tamanho dos ícones ao passar o mouse */
+}
+
+.nav-link:hover svg {
+    background-color: #D9985F; /* Muda o fundo dos ícones ao passar o mouse */
+}
+
+.nav-link p {
+    margin: 5px 0 0; /* Espaçamento interno do texto */
+    color: white; /* Cor do texto */
+}
+
+/* Ajustes para os ícones */
+.nav-link svg {
+    fill: white; /* Cor do preenchimento do ícone */
+    width: 30px; /* Largura do ícone */
+    height: 30px; /* Altura do ícone */
+    margin-right: 5px; /* Espaçamento à direita do ícone */
+    transition: transform 0.3s, background-color 0.3s; /* Transições suaves para transformação e mudança de cor de fundo */
+    border-radius: 50%; /* Borda arredondada para criar um círculo */
+    padding: 10px; /* Espaçamento interno */
+}
+
+/* Estilos do formulário de login na navegação */
+.nav-form-container {
+    display: flex; /* Usa flexbox para layout flexível */
+    align-items: center; /* Centraliza verticalmente os itens */
+    gap: 10px; /* Espaçamento entre os itens */
+}
+
+.nav-form-container input {
+    padding: 5px; /* Espaçamento interno do campo de entrada */
+    font-size: 14px; /* Tamanho da fonte */
+}
+
+.nav-btn, .cartão {
+    padding: 5px 10px; /* Espaçamento interno do botão */
+    font-size: 14px; /* Tamanho da fonte */
+    cursor: pointer; /* Altera o cursor ao passar por cima */
+    background-color: #555; /* Cor de fundo do botão */
+    color: white; /* Cor do texto do botão */
+    border: none; /* Remove a borda */
+    border-radius: 5px; /* Borda arredondada */
+}
+
+.nav-btn:hover, .cartão:hover {
+    background-color: #020202; /* Cor de fundo do botão ao passar o mouse */
+}
+
+/* Media query para telas menores */
+@media (max-width: 768px) {
+    .nav-content {
+        flex-direction: column; /* Coloca os itens um abaixo do outro */
+        padding: 10px; /* Adiciona espaçamento interno menor */
+    }
+
+    .nav-icon-container {
+        margin-bottom: 10px; /* Espaçamento abaixo da logo */
+    }
+
+    .nav-menu {
+        justify-content: center; /* Centraliza os itens */
+    }
+
+    .nav-link {
+        margin: 5px; /* Espaçamento menor entre os itens */
+    }
+
+    .nav-form-container {
+        flex-direction: column; /* Coloca o formulário abaixo dos links */
+    }
+
+    .nav-form-container input,
+    .nav-btn,
+    .cartão {
+        width: 100%; /* Largura total */
+        margin: 5px 0; /* Espaçamento entre os elementos */
+    }
+}
+
+/* Estilos para pacotes */
+.pacotes {
+    padding: 15px; /* Adiciona preenchimento ao redor dos pacotes */
+}
+
+.pacotes .pacotes-cards {
+    display: flex; /* Usa flexbox para layout flexível */
+    margin: auto; /* Centraliza horizontalmente os cartões de pacotes */
+    flex-wrap: wrap; /* Permite que os cartões quebrem para a próxima linha conforme necessário */
+    justify-content: center; /* Centraliza os cartões horizontalmente */
+}
+
+.pacotes .card {
+    width: 250px; /* Largura dos cartões de pacotes */
+    height: 350px; /* Altura dos cartões de pacotes */
+    background: #734226; /* Cor de fundo dos cartões */
+    border-radius: 25px 0; /* Borda arredondada na parte superior esquerda dos cartões */
+    margin: 25px 20px; /* Espaçamento entre os cartões */
+    position: relative; /* Define posição relativa para posicionamento dos elementos filhos */
+}
+
+.pacotes .pacotes-title {
+    margin: 15px 0; /* Espaçamento ao redor do título dos pacotes */
+    width: 100%; /* Largura total */
+    text-align: center; /* Alinhamento do texto centralizado */
+}
+
+.pacotes .card-image {
+    width: 250px; /* Largura da imagem do cartão */
+    height: 55%; /* Altura da imagem do cartão */
+    border-radius: 25px 0 0 0; /* Borda arredondada na parte superior esquerda da imagem */
+    padding: 5px; /* Espaçamento interno da imagem */
+}
+
+.pacotes .card-content ul {
+    display: flex; /* Usa flexbox para layout flexível */
+    flex-direction: column; /* Coloca os itens da lista em coluna */
+    list-style: none; /* Remove os estilos padrão da lista */
+    padding: 5px 15px 7px 15px; /* Preenchimento interno da lista */
+    margin: 0; /* Remove a margem padrão */
+}
+
+.pacotes .card-content ul li {
+    font-size: 0.9rem; /* Tamanho da fonte dos itens da lista */
+    display: flex; /* Usa flexbox para layout flexível */
+    align-items: center; /* Centraliza verticalmente os itens */
+    margin: 3.5px 0; /* Espaçamento vertical entre os itens */
+    color: rgb(252, 252, 252); /* Cor do texto dos itens */
+}
+
+.pacotes .card-content li svg {
+    height: 19px; /* Altura do ícone */
+    width: 19px; /* Largura do ícone */
+    margin-right: 8px; /* Espaçamento à direita do ícone */
+}
+
+.pacotes .card-content h1 {
+    margin: 0 0 0 8px; /* Espaçamento ao redor do título */
+}
+
+.pacotes .card .card-tag-top {
+    font-size: 0.7rem; /* Tamanho da fonte da tag superior */
+    position: absolute; /* Posição absoluta para posicionamento */
+    right: 0; /* Posicionamento à direita */
+    background: rgb(250, 133, 0); /* Cor de fundo da tag superior */
+    top: 15px; /* Distância do topo */
+    border-radius: 4px 0 0 4px; /* Borda arredondada na tag superior */
+}
+
+.pacotes .card .card-tag-bottom {
+    font-size: 0.9rem; /* Tamanho da fonte da tag inferior */
+    position: absolute; /* Posição absoluta para posicionamento */
+    left: 0; /* Posicionamento à esquerda */
+    background: rgb(252, 252, 252); /* Cor de fundo da tag inferior */
+    top: 45%; /* Distância do topo */
+    border-radius: 0 4px 4px 0; /* Borda arredondada na tag inferior */
+}
+
+.pacotes .card .card-tag p {
+    margin: 4px; /* Espaçamento interno da tag */
+    color: rgb(68, 13, 13); /* Cor do texto da tag */
+    font-weight: bold; /* Texto em negrito */
+}
+
+/* Estilos para serviços */
+.servicos {
+    padding: 15px; /* Adiciona preenchimento ao redor dos serviços */
+}
+
+.servicos .servicos-title {
+    text-align: center; /* Alinhamento do título centralizado */
+    margin-bottom: 45px; /* Espaçamento abaixo do título */
+    margin-top: 0; /* Espaçamento acima do título */
+}
+
+.servicos .servicos-cards {
+    display: flex; /* Usa flexbox para layout flexível */
+    justify-content: center; /* Centraliza os cartões de serviços horizontalmente */
+    margin: auto; /* Centraliza horizontalmente os cartões de serviços */
+    flex-wrap: wrap; /* Permite que os cartões quebrem para a próxima linha conforme necessário */
+}
+
+.servicos .card {
+    width: 250px; /* Largura dos cartões de serviços */
+    height: 350px; /* Altura dos cartões de serviços */
+    text-align: center; /* Alinhamento do texto centralizado */
+    display: flex; /* Usa flexbox para layout flexível */
+    flex-direction: column; /* Coloca os itens em coluna */
+    align-items: center; /* Centraliza verticalmente os itens */
+    padding: 0 15px 0 15px; /* Espaçamento interno dos cartões */
+}
+
+.servicos .card .card-content {
+    height: 65%; /* Altura do conteúdo do cartão */
+    text-align: center; /* Alinhamento do texto centralizado */
+}
+
+.servicos .card svg {
+    height: 60px; /* Altura do ícone */
+    width: 60px; /* Largura do ícone */
+    color: #070766; /* Cor do ícone */
+    transition: all 1s; /* Transição suave de todos os estilos */
+}
+
+.servicos .card svg:hover {
+    stroke: #0a0a0a; /* Cor do traço ao passar o mouse */
+    transform: scale(1.1); /* Escala ao passar o mouse */
+}
+
+.servicos .card h3 {
+    margin: 15px 0 0 0; /* Espaçamento ao redor do título */
+    font-weight: bold; /* Texto em negrito */
+    color: #734226; /* Cor do texto */
+}
+
+.servicos .card p {
+    color: rgb(245, 244, 244); /* Cor do texto */
+    padding: 2px; /* Preenchimento interno */
+    text-align: center; /* Alinhamento do texto centralizado */
+}
+
+.servicos button {
+    padding: 8px 12px; /* Preenchimento do botão */
+    border-radius: 10px /* arredondamento da borsa*/
+    
+}
+
+
+/* Estilos para o mapa */
+#map {
+    height: 400px; /* Altura do mapa */
+    width: 100%; /* Largura total do mapa */
+    color: rgb(245, 244, 244);
+}
+
+/* Estilos para a seção de contato */
+.contato {
+    padding: 60px 5%; /* Preenchimento da seção de contato */
+    position: relative; /* Define posição relativa para elementos filhos */
+}
+
+.contato .contato-card {
+    width: 200px; /* Largura do cartão de contato */
+    height: 200px; /* Altura do cartão de contato */
+    background: white; /* Cor de fundo do cartão de contato */
+    position: absolute; /* Posição absoluta para posicionamento */
+    z-index: 99; /* Z-index para empilhamento */
+    top: calc(50% - 150px); /* Posicionamento vertical */
+    left: calc(26% - 175px); /* Posicionamento horizontal */
+    border-radius: 10px; /* Borda arredondada */
+    text-align: center; /* Alinhamento do texto centralizado */
+    display: flex; /* Usa flexbox para layout flexível */
+    flex-direction: column;} /* Coloca os
+/* Reset de margens e paddings para o footer */
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo básico para o footer */
+footer {
+    background-color: #f4f4f434;
+    padding: 40px 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.footer-col {
+    width: 220px;
+    margin-bottom: 30px;
+}
+
+.footer-col h4 {
+    color: #faf8f8;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.footer-col ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    color: #9b5301;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: block;
+}
+
+.footer-col ul li a:hover {
+    color: #faf7f7;
+    transform: scale(1.1);
+}
+
+.social-links {
+    display: flex;
+    gap: 10px;
+}
+
+.social-links a {
+    text-decoration: none;
+    color: #666;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #333;
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #ddd;
+    color: #555;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.icon:hover {
+    background-color: #666;
+    color: #fff;
+}
+
+/* Estilos responsivos */
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-col {
+        width: 100%;
+        text-align: center;
+    }
+}
